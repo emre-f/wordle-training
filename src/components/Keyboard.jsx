@@ -1,39 +1,43 @@
 import React from "react"
 
 export default function Keyboard(props) {
+    function typeKey(key) {
+        props.setCurrentWord((currentWord) => currentWord.concat(key).substring(0, props.wordLength)); // max word length
+    }
+
     return (
         <div className="keyboard">
             <div className="keyboard-row"> 
-                <span className={`key ${props.keyboardKeys.q}`}>Q</span>
-                <span className={`key ${props.keyboardKeys.w}`}>W</span>
-                <span className={`key ${props.keyboardKeys.e}`}>E</span>
-                <span className={`key ${props.keyboardKeys.r}`}>R</span>
-                <span className={`key ${props.keyboardKeys.t}`}>T</span>
-                <span className={`key ${props.keyboardKeys.y}`}>Y</span>
-                <span className={`key ${props.keyboardKeys.u}`}>U</span>
-                <span className={`key ${props.keyboardKeys.i}`}>I</span>
-                <span className={`key ${props.keyboardKeys.o}`}>O</span>
-                <span className={`key ${props.keyboardKeys.p}`}>P</span>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.q} __nofocus`} onClick={() => typeKey('q')}>Q</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.w} __nofocus`} onClick={() => typeKey('w')}>W</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.e} __nofocus`} onClick={() => typeKey('e')}>E</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.r} __nofocus`} onClick={() => typeKey('r')}>R</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.t} __nofocus`} onClick={() => typeKey('t')}>T</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.y} __nofocus`} onClick={() => typeKey('y')}>Y</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.u} __nofocus`} onClick={() => typeKey('u')}>U</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.i} __nofocus`} onClick={() => typeKey('i')}>I</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.o} __nofocus`} onClick={() => typeKey('o')}>O</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.p} __nofocus`} onClick={() => typeKey('p')}>P</button>
             </div>
             <div className="keyboard-row">
-                <span className={`key ${props.keyboardKeys.a}`}>A</span>
-                <span className={`key ${props.keyboardKeys.s}`}>S</span>
-                <span className={`key ${props.keyboardKeys.d}`}>D</span>
-                <span className={`key ${props.keyboardKeys.f}`}>F</span>
-                <span className={`key ${props.keyboardKeys.g}`}>G</span>
-                <span className={`key ${props.keyboardKeys.h}`}>H</span>
-                <span className={`key ${props.keyboardKeys.j}`}>J</span>
-                <span className={`key ${props.keyboardKeys.k}`}>K</span>
-                <span className={`key ${props.keyboardKeys.l}`}>L</span>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.a} __nofocus`} onClick={() => typeKey('a')}>A</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.s} __nofocus`} onClick={() => typeKey('s')}>S</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.d} __nofocus`} onClick={() => typeKey('d')}>D</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.f} __nofocus`} onClick={() => typeKey('f')}>F</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.g} __nofocus`} onClick={() => typeKey('g')}>G</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.h} __nofocus`} onClick={() => typeKey('h')}>H</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.j} __nofocus`} onClick={() => typeKey('j')}>J</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.k} __nofocus`} onClick={() => typeKey('k')}>K</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.l} __nofocus`} onClick={() => typeKey('l')}>L</button>
             </div>
             <div className="keyboard-row">
-                <span className={`key ${props.keyboardKeys.z}`}>Z</span>
-                <span className={`key ${props.keyboardKeys.x}`}>X</span>
-                <span className={`key ${props.keyboardKeys.c}`}>C</span>
-                <span className={`key ${props.keyboardKeys.v}`}>V</span>
-                <span className={`key ${props.keyboardKeys.b}`}>B</span>
-                <span className={`key ${props.keyboardKeys.n}`}>N</span>
-                <span className={`key ${props.keyboardKeys.m}`}>M</span>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.z} __nofocus`} onClick={() => typeKey('z')}>Z</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.x} __nofocus`} onClick={() => typeKey('x')}>X</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.c} __nofocus`} onClick={() => typeKey('c')}>C</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.v} __nofocus`} onClick={() => typeKey('v')}>V</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.b} __nofocus`} onClick={() => typeKey('b')}>B</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.n} __nofocus`} onClick={() => typeKey('n')}>N</button>
+                <button tabIndex="-1" className={`key ${props.keyboardKeys.m} __nofocus`} onClick={() => typeKey('m')}>M</button>
             </div>
         </div>
     )

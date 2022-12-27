@@ -247,8 +247,9 @@ function App() {
 
       <h3 className="error-message">{errorMessage}</h3>
 
-      <Keyboard keyboardKeys={keyboardKeys}/>
+      <Keyboard keyboardKeys={keyboardKeys} setCurrentWord={setCurrentWord} wordLength={wordLength} />
 
+      <button tabIndex="-1" className="enter-btn __nofocus" onClick={() => checkWord(currentWord)}>ENTER</button>
       <button tabIndex="-1" className="restart-btn __nofocus" onClick={() => restartGame()}>NEW GAME</button>
       <button tabIndex="-1" className="submit-word-btn __nofocus" onClick={() => checkWord(currentWord)}>Check Word</button>
     </div>
