@@ -239,17 +239,7 @@ function App() {
   return (
     <div className="app">
       {game === 'true' && <Confetti className="confetti" />}
-      <h1 className="title">Wordle Clone</h1>
-      {/*<p>Target Word: {targetWord}</p>
-      <p>Current Word: {currentWord}</p>
-      <p>Past Words: </p>
-      <ul>
-        <li>{pastWords[0]? pastWords[0].word : 'none'}</li>
-        <li>{pastWords[1]? pastWords[1].word : 'none'}</li>
-        <li>{pastWords[2]? pastWords[2].word : 'none'}</li>
-        <li>{pastWords[3]? pastWords[3].word : 'none'}</li>
-        <li>{pastWords[4]? pastWords[4].word : 'none'}</li>
-      </ul> */}
+      <h1 className="title">Wordle Training</h1>
       
       <div className="game-panel">
         {wordRows}
