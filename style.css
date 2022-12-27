@@ -1,0 +1,127 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(30, 30, 30);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  
+  overflow: hidden;
+  padding: 40px 40px;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  vertical-align: middle;
+  /* border: 2px solid red; */
+  height: 80vh;
+}
+
+.word-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.game-panel {
+  /* border: 2px solid orange; */
+  display: inline-block;
+  width: 100%;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+  margin: 0px;
+  margin-bottom: 50px;
+}
+
+.letter-box {
+  height: 4rem;
+  width: 4rem;
+  margin: 5px 5px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border:1px solid rgba(100, 100, 100, 0.55);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.letter {
+  font-size: 30px;
+}
+
+.error-message {
+  margin: 0px;
+  width: 100%;
+  color: red;
+  font-weight: bold;
+}
+
+.submit-word-btn {
+  display: none;
+}
+
+.keyboard {
+  width: 100%;
+}
+
+.keyboard-row {
+  margin: 30px;
+}
+
+.key {
+  font-size: 1.4rem;
+  font-weight: bold;
+  padding: 12px;
+  margin: 3px;
+  width: 0.8rem;
+  height: 0.8rem;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.key {
+  background-color: rgb(125, 125, 125);
+}
+
+.key.green {
+  background-color: #6ca965;
+}
+
+.key.yellow {
+  background-color: #c8b653;
+}
+
+.key.miss {
+  background-color: rgb(50, 50, 50);
+}
+
+.restart-btn {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border:1px solid rgba(100, 100, 100, 0.55);
+  border-radius: 10px;
+  cursor: pointer;
+}
