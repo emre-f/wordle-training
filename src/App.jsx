@@ -20,6 +20,7 @@ function App() {
   const [errorMessage, setErrorMessage] = React.useState('') // Error message to display
   const [keyboardKeys, setKeyboardKeys] = React.useState(JSON.parse(localStorage.getItem("keyboardKeys")) || getFreshKeyboardKeys())
 
+  // Create set of keyboard objects (that aren't labelled 'miss', 'green', or 'yellow')
   function getFreshKeyboardKeys() {
     var res = {}
     for (let i = 0; i < alphabet.length; i++) {
@@ -30,11 +31,13 @@ function App() {
     return res
   }
 
+  // Set the game state to true, which means game is over and word was guessed correctly
   function winGame() {
     setGame('true');
     localStorage.setItem("game", 'true')
   }
 
+  // Restart the game state
   function restartGame() {
     setGame('false');
     localStorage.setItem("game", 'false')
@@ -46,6 +49,10 @@ function App() {
     setKeyboardKeys(getFreshKeyboardKeys())
   }
 
+  /* 
+  Compare the enteredWord to targetWord. 
+  Also updates the keyboard keys and returns the match results of the two words
+  */
   function calculateWordMatches(enteredWord, targetWord) {
     let matchInfo = Array(wordLength).fill('miss'); // Array of states
     let leftOverLetters = targetWord.split('') // Letters that haven't been matched yet
@@ -80,12 +87,15 @@ function App() {
     }
 
     // Set the keyboard matches
-    console.log(updatedKeyboardKeys)
     localStorage.setItem("keyboardKeys", JSON.stringify(updatedKeyboardKeys))
 
     return matchInfo
   }
   
+  /* 
+  Called when a word is submitted by hitting 'Enter'. 
+  If the word is suitable, compares the words and updates pastWords and currentWord states
+  */
   function checkWord(word) {
     if (pastWords.length >= rows) {
       return;
@@ -115,7 +125,7 @@ function App() {
     setCurrentWord(""); // Clear current word
   }
 
-  // Get the word that will be the target for the game
+  // Get the word that will be the target for the current game
   function getWord() { 
     let word = possible_answers[Math.floor(Math.random() * possible_answers.length)];
     localStorage.setItem("targetWord", word)
@@ -166,7 +176,10 @@ function App() {
     setWordRows(tempWordRows)
   }
 
-  ///
+  /* 
+  Used to simulate mouse click event. 
+  This is used to trigger the enter word button by clicking the 'Enter' key
+  */
   const mouseClickEvents = ['mousedown', 'click', 'mouseup'];
   function simulateMouseClick(element){
     mouseClickEvents.forEach(mouseEventType =>
@@ -181,9 +194,7 @@ function App() {
     );
   }
 
-  React.useEffect(() => {
-    console.log("Setting up game (Should be called only once)")
-
+  React.useEffect(() => { // Will be only called once at the start of the game
     setAllRows();
 
     function inAlphabet(key) {
@@ -191,7 +202,7 @@ function App() {
     }
 
     document.addEventListener('keydown', function(event){
-      if(document.querySelector('.confetti')) { return; }
+      if(document.querySelector('.confetti')) { return; } // If there is confetti = game is over, can't type new words
 
       if (!keysHit.has(event.key)) {
         if (inAlphabet(event.key)) {
@@ -229,7 +240,7 @@ function App() {
     
   }, [currentWord, pastWords])
 
-  // Clear error message
+  // Clear error message after 3 seconds
   React.useEffect(() => {
     setTimeout(() => {
       { setErrorMessage("") }

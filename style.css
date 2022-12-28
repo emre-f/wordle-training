@@ -25,7 +25,6 @@
   text-align: center;
   flex-wrap: wrap;
   vertical-align: middle;
-  /* border: 2px solid red; */
   height: 80vh;
 }
 
@@ -38,7 +37,6 @@
 }
 
 .game-panel {
-  /* border: 2px solid orange; */
   display: inline-block;
   width: 100%;
 }
